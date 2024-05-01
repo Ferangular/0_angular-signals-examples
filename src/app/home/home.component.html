@@ -1,0 +1,14 @@
+@for (item of examples(); track item) {
+<a class="item" [routerLink]="item.routerLink">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ item.title }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        {{ item.content }}
+      </p>
+    </mat-card-content>
+  </mat-card>
+</a>
+}
