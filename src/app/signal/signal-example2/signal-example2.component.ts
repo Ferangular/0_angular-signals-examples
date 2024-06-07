@@ -5,8 +5,13 @@ import { CommonModule } from '@angular/common';
   selector: 'app-signal-example2',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './signal-example2.component.html',
-  styleUrl: './signal-example2.component.scss',
+  template: `
+  <h2>Example 2 - Auto increment count</h2>
+
+<span>
+  Count: {{ count() }}
+</span>
+  `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export default class SignalExample2Component {

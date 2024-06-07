@@ -22,7 +22,34 @@ const PRODUCTS: Product[] = [
 @Component({
   selector: 'signal-example13',
   standalone: true,
-  templateUrl: `./signal-example13.component.html`,
+  template:`
+  <h2>Example 13 - My Cart(Add/Remove Product)</h2>
+
+<ul>
+  @for (product of products(); track product) {
+
+    <li>
+      {{product.name}} - {{product.price}}
+      @if (selectProductsIds().includes(product.id)) {
+
+          <button mat-raised-button color="warn" (click)="removeFromCart(product)">
+            Remove
+          </button>
+          } @else {
+          <button mat-raised-button color="primary" (click)="addToCart(product)">
+            Add
+          </button>
+          }
+    </li>
+  }
+
+</ul>
+
+      <p>
+        Total Price: <b>{{ totalPrice()| currency: 'USD' }}</b>
+      </p>
+
+  `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [MatButtonModule, NgFor, NgIf, CurrencyPipe],
   styles: [

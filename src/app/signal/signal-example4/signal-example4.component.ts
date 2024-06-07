@@ -6,8 +6,18 @@ import { MatButtonModule } from '@angular/material/button';
 @Component({
   selector: 'app-signal-example4',
   standalone: true,
-  templateUrl: './signal-example4.component.html',
-  styleUrl: './signal-example4.component.scss',
+  template:
+  `    <h2>Example 4 - computed</h2>
+    <button mat-raised-button color="primary"  (click)="increaseCount()">Increase</button>
+    <p>
+      count -> {{ count() }}
+    </p>
+    <p>
+      Computed count = {{ count() }} + 2 -> {{ doubleCount() }}
+    </p>
+
+  `,
+
   imports: [FormsModule, MatButtonModule],
   changeDetection: ChangeDetectionStrategy.OnPush
 })

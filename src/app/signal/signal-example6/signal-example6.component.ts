@@ -6,8 +6,17 @@ import { MatInputModule } from '@angular/material/input';
 @Component({
   selector: 'app-signal-example6',
   standalone: true,
-  templateUrl: './signal-example6.component.html',
-  styleUrl: './signal-example6.component.scss',
+  template:`
+
+  <h2>Example 6 - input with ngModel</h2>
+<div>
+  <p>User Name - {{ username() }}</p>
+  <mat-form-field>
+    <mat-label>User Name</mat-label>
+    <input matInput [(ngModel)]="username">
+  </mat-form-field>
+</div>
+  `,
   imports: [FormsModule, MatFormFieldModule, MatInputModule],
   changeDetection: ChangeDetectionStrategy.OnPush
 })

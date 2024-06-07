@@ -5,8 +5,14 @@ import { interval, take } from 'rxjs';
 @Component({
   selector: 'app-signal-example7',
   standalone: true,
-  templateUrl: './signal-example7.component.html',
-  styleUrl: './signal-example7.component.scss',
+  template:`
+
+<h2>Example 7 - observable to a signal</h2>
+<p>Counter - {{ counter() }}</p>
+<p>Counter with intial value - {{ counterWithIntialValue() }}</p>
+<p>Counter to up 5 - {{ counterUpto5() }}</p>
+
+  `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export default class SignalExample5Component {

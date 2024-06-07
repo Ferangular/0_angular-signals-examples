@@ -8,8 +8,26 @@ import { MatInputModule } from '@angular/material/input';
 @Component({
   selector: 'app-signal-example5',
   standalone: true,
-  templateUrl: './signal-example5.component.html',
-  styleUrl: './signal-example5.component.scss',
+  template:`
+  <h2>Example 5 - Todo List</h2>
+
+  <mat-form-field>
+    <mat-label>Todo Name</mat-label>
+    <input matInput name="todo" #todo />
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="addTodo(todo)">
+    Add Todo
+  </button>
+  <ul>
+    @for (item of todos(); track item) {
+    <li>
+      {{ item }}
+    </li>
+    }
+  </ul>
+  `,
+
   imports: [
     FormsModule,
     NgFor,

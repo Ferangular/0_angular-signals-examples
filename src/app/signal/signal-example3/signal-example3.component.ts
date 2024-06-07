@@ -5,8 +5,19 @@ import { MatInputModule } from '@angular/material/input';
 @Component({
   selector: 'app-signal-example3',
   standalone: true,
-  templateUrl: './signal-example3.component.html',
-  styleUrl: './signal-example3.component.scss',
+  template:`
+  <h2>Example 3 - Update name using the input</h2>
+
+<div>
+  <mat-form-field>
+    <mat-label>Enter your name</mat-label>
+    <input matInput #myName (input)="updateName(myName.value)">
+  </mat-form-field>
+
+  My Name is: {{ name() }}
+</div>
+
+  `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [MatFormFieldModule, MatInputModule]
 })
